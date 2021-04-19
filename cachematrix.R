@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) #this function makes the special matri
   list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
-# this function below then returns the cached data as inversed and calculated by the matrix above and setinverse
+# this function below then returns the cached data as inversed and calculated by the matrix above, especially setinverse
 
 cachesolve <- function(x, ...) {
   minv<-x$getinverse()
