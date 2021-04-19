@@ -6,15 +6,14 @@ makeCacheMatrix <- function(x = matrix()) #this function makes the special matri
     x <<- y  ## the <<- indicates that it is assigning a value in a special environment, which is the parent one
     minv <<- NULL}
   
-# set and get will retrieve the values of the assigned matrix; getinverse and setinverse will calculate and retrieve the inverse of these values
-
- get <- function()x
-setInverse <- function(inverse) minv <<- inverse
-getInverse <- function() minv 
-list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
+## set and get will retrieve the values of the assigned matrix; getinverse and setinverse will calculate and retrieve the inverse of these values
+  get <- function()x
+  setInverse <- function(inverse) minv <<- inverse
+  getInverse <- function() minv 
+  list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
 
-# this function below then returns the cahced data as inversed and calculated by the matrix above and setinverse
+# this function below then returns the cached data as inversed and calculated by the matrix above and setinverse
 
 cachesolve <- function(x, ...) {
   minv<-x$getinverse()
